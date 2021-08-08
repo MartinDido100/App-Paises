@@ -1,0 +1,28 @@
+<h2>Busquedas</h2>
+    <hr />
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Buscar Pais
+      </li>
+      <!-- El routerLinkActive le especificas una clase cuando se muestra esa ruta -->
+      <li
+        class="list-group-item"
+        routerLink="region"
+        routerLinkActive="active"
+      >
+        Por Region
+      </li>
+      <!-- El option exact es para que el path sea exacto -->
+      <li
+        class="list-group-item"
+        routerLink="capital"
+        routerLinkActive="active"
+      >
+        Por Capital
+      </li>
+    </ul>

@@ -1,0 +1,25 @@
+<h2>Por capital</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <app-pais-input (onEnviarTermino)="buscar($event)"  (onDebounce)="sugerencias($event)" [placeholder]="placeholder"></app-pais-input>
+        <ul class="list-group">
+            <li  *ngFor="let pais of paisesSugeridos" class="list-group-item list-group-item-action">
+              <a [routerLink]="['/pais',pais.alpha2Code]">{{pais.capital}}</a>
+            </li>
+          </ul>
+    </div>
+
+    <hr>
+
+    <div class="alert alert-danger" *ngIf="error">
+        No se encontro el termino {{ termino }}
+    </div>
+</div>
+
+<div class="row" *ngIf="!error">
+    <div class="col">
+      <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
+</div>
